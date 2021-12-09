@@ -1,7 +1,8 @@
 <?php
 namespace App\Repositories;
 
-use App\Models\GrupoServicios;
+use Illuminate\Http\Request;
+use App\Models\Interno\GrupoServicios;
 use stdClass;
 use DB;
 
@@ -91,6 +92,16 @@ class GrupoServiciosRepository implements GrupoServiciosInterface {
         }
 
         return $data;
+    }
+
+    public function create(Request $request){
+
+    }
+    public function update(Request $request, string $id){
+
+    }
+    public function delete(string $id){
+
     }
 }
 

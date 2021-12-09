@@ -21,9 +21,10 @@ class AuthController extends Controller
         $this->authRepository = $authRepository;
     }
 
-	public function register(Request $request, string $key){
+	public function register(Request $request, $key){
 
 		try {
+
 			$validateData = $request->validate([
 				'nombres' => 'required|string|max:255',
 				'email' => 'required|string|email|max:255|unique:users',
@@ -46,10 +47,9 @@ class AuthController extends Controller
 
 	}
 
-	public function login(Request $request, string $key){
+	public function login(Request $request, $key){
 
-        if($key != env('API_KEY_ACCESS'))
-                abort(404);
+
 		try {
             if(!Auth::attempt($request->only('email', 'password'))){
                 return response()->json([

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Interno;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ServiciosModel extends Model
 {
     use HasFactory;
-    protected $table = 'servicios';
+    protected $table = 'leptus.servicios';
     protected $primaryKey = 'id';
 
     protected $fillable = [
@@ -17,10 +17,13 @@ class ServiciosModel extends Model
         'nombre_clave',
         'precio',
         'stock',
-        'stock',
         'flag',
+        'delete_comentario',
+        'delete',
         'state',
         'created_by',
         'updated_by',
+        'deleted_by',
+        'deleted_at',
     ];
 }
